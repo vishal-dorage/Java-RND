@@ -24,8 +24,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                sh 'cd /home/jenkins/agent/workspace/Java-Pipeline/target'
-                sh 'cp my-app-1.0-SNAPSHOT.jar /home'
+                
             }
         }
     }
