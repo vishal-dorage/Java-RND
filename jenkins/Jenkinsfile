@@ -24,7 +24,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 script {
-    echo "Sending artifacts to machine at " + remoteDirectory
+    echo "Sending artifacts to machine at "
 
     // Use of the ssh publisher plugin over SSH
     sshPublisher(
