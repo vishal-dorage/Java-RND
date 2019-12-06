@@ -46,9 +46,7 @@ pipeline {
             )
         ]
     )
-    // How can I get the output of execCommand?
-    // If the exit code was 1, I want to perform some special steps
-    // I'd also like to include the output of the command in these steps
+    
 }
                 
                 
