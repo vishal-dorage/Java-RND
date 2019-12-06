@@ -34,10 +34,10 @@ pipeline {
                 configName: "deployment",
                 transfers: [
                     sshTransfer(
-                        sourceFiles: mySourceFilesList,
-                        remoteDirectory: remoteDirectory,
+                        sourceFiles: my-app-1.0-SNAPSHOT.jar,
+                        remoteDirectory: /opt,
                         flatten: true,
-                        execCommand: commandToExec,
+                        execCommand: top,
                         execTimeout: 1800000
                     )
                 ],
@@ -54,3 +54,4 @@ pipeline {
            }
         }
     }
+}
