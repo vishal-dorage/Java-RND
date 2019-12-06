@@ -23,10 +23,9 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-               sh './jenkins/scripts/deliver.sh'
-                
-                
-            }
-        }
+               script {
+                   sshPublisher(publishers: [sshPublisherDesc(configName: 'deployment', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/opt', remoteDirectorySDF: false, removePrefix: 'deployment', sourceFiles: '\'**/*.jar\'')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                }
+           }
     }
 }
